@@ -3,36 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".register.RegisterActivity">
+    android:layout_height="wrap_content"
+    tools:context=".user.EditaccActivity">
     <LinearLayout
+        android:padding="20dp"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/backuser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:backgroundTint="@color/white"
+                />
+            <TextView
+                android:id="@+id/titlekategori"
+                android:layout_marginStart="-50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Edit Akun"
+
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                />
+        </LinearLayout>
         <ImageView
+            android:layout_marginTop="35dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/dog"
-            android:layout_marginTop="100dp"
+            android:src="@drawable/amanda"
             />
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/petcare"
-            android:layout_marginTop="10dp"
-            />
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/sayangilah"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
+            android:text="Edit Foto"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="20dp"
             />
         <LinearLayout
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:padding="20dp"
+
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="match_parent"
@@ -96,39 +121,14 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/simpanedit"
                 app:cornerRadius="10dp"
-                android:text="Daftar"
-                android:id="@+id/daftarr"
+                android:text="Simpan"
                 android:textAllCaps="false"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/mygreen"
                 />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-                <TextView
-                    android:textStyle="bold"
-                    android:layout_marginTop="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sudah punya akun ?  "
-                    />
-                <TextView
-                    android:id="@+id/gologin"
-                    android:clickable="true"
-                    android:textStyle="bold"
-                    android:textColor="@color/blue"
-                    android:layout_marginTop="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Masuk Aja"
-                    />
-            </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 
 </ScrollView>

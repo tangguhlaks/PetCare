@@ -49,7 +49,7 @@ public class KategoriActivity extends AppCompatActivity {
                 mlist.add(p4);
                 produkAdapter2 = new ProdukAdapter2(getApplicationContext(),mlist);
                 rcmakanan.setAdapter(produkAdapter2);
-                detailclick();
+                detailclick2();
                 break;
             default:
                 rcmakanan = findViewById(R.id.rcviewmakanan);
@@ -80,6 +80,23 @@ public class KategoriActivity extends AppCompatActivity {
         });
     }
 
+    private void detailclick2() {
+        produkAdapter2.setOnCallBack(new ProdukAdapter2.OnCallBack() {
+            @Override
+            public void onClickView(ModelProduk modelProduk) {
+                Intent i = new Intent(getApplicationContext(),Detail2Activity.class);
+                i.putExtra("gambar",modelProduk.getGambar());
+                i.putExtra("nama",modelProduk.getNama());
+                i.putExtra("bintang",modelProduk.getBintang());
+                i.putExtra("deskripsi",modelProduk.getDeskripsi());
+                i.putExtra("harga",modelProduk.getHarga());
+                i.putExtra("kategori",kategori);
+                startActivity(i);
+                finish();
+            }
+        });
+    }
+
     private void detailclick() {
         produkAdapter.setOnCallBack(new ProdukAdapter.OnCallBack() {
             @Override
@@ -100,7 +117,9 @@ public class KategoriActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(),UserActivity.class));
+        Intent i = new Intent(getApplicationContext(), UserActivity.class);
+        i.putExtra("go","home");
+        startActivity(i);
         finish();
     }
 }

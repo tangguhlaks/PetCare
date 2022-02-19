@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -51,8 +52,28 @@ public class UserActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         bottomNavigationView.setSelectedItemId(R.id.menu_user_home);
-        Fragment f = new HomeUserFragment();
+        Intent cekgo = getIntent();
         FragmentManager manager = getSupportFragmentManager();
+        Fragment f = null;
+        switch (cekgo.getStringExtra("go")){
+            case "home":
+                bottomNavigationView.setSelectedItemId(R.id.menu_user_home);
+                f = new HomeUserFragment();
+                break;
+            case "pesanan":
+                bottomNavigationView.setSelectedItemId(R.id.menu_user_article);
+                f = new ArticleUserFragment();
+                break;
+            case "history":
+                bottomNavigationView.setSelectedItemId(R.id.menu_user_history);
+                f = new HistoryUserFragment();
+                break;
+            case "user":
+                bottomNavigationView.setSelectedItemId(R.id.menu_user_user);
+                f = new UserUserFragment();
+                break;
+        }
         manager.beginTransaction().replace(R.id.fragmentuser,f).commit();
+
     }
 }

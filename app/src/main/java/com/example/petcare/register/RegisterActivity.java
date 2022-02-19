@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.petcare.R;
 import com.example.petcare.login.LoginActivity;
+import com.google.android.material.button.MaterialButton;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -21,6 +22,14 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
+            }
+        });
+        MaterialButton daftar = findViewById(R.id.daftarr);
+        daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                 finish();
             }
         });

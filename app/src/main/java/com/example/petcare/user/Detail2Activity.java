@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.petcare.R;
 
-public class DetailActivity extends AppCompatActivity {
+public class Detail2Activity extends AppCompatActivity {
     TextView harga1,harga2,bintang,nama,desc,title;
     ImageView gambar;
     Intent getdata;
@@ -20,7 +20,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail2);
 
         harga1 = findViewById(R.id.dharga);
         harga2 = findViewById(R.id.dharga2);
@@ -33,12 +33,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
         getdata = getIntent();
-        if (getdata.getStringExtra("kategori").equals("home")){
-            title.setText("Info Makanan");
-        }else{
-            title.setText("Info "+getdata.getStringExtra("kategori"));
-        }
-
+        title.setText("Info "+getdata.getStringExtra("kategori"));
         harga1.setText(getdata.getStringExtra("harga"));
         harga2.setText(getdata.getStringExtra("harga"));
         nama.setText(getdata.getStringExtra("nama"));
@@ -49,21 +44,13 @@ public class DetailActivity extends AppCompatActivity {
         backk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (getdata.getStringExtra("kategori").equals("home")) {
-                    Intent i = new Intent(getApplicationContext(), UserActivity.class);
-                    i.putExtra("go","home");
-                    startActivity(i);
-                    finish();
-                }else {
-                    Intent i = new Intent(getApplicationContext(), KategoriActivity.class);
-                    i.putExtra("title", getdata.getStringExtra("kategori"));
-                    startActivity(i);
-                    finish();
-                }
+                Intent i = new Intent(getApplicationContext(),KategoriActivity.class);
+                i.putExtra("title",getdata.getStringExtra("kategori"));
+                startActivity(i);
+                finish();
             }
         });
-
-        Button beli = findViewById(R.id.beli);
+        Button beli = findViewById(R.id.beli2);
         beli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,16 +70,9 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if (getdata.getStringExtra("kategori").equals("home")) {
-            Intent i = new Intent(getApplicationContext(), UserActivity.class);
-            i.putExtra("go","home");
-            startActivity(i);
-            finish();
-        }else {
-            Intent i = new Intent(getApplicationContext(), KategoriActivity.class);
-            i.putExtra("title", getdata.getStringExtra("kategori"));
-            startActivity(i);
-            finish();
-        }
+        Intent i = new Intent(getApplicationContext(),KategoriActivity.class);
+        i.putExtra("title",getdata.getStringExtra("kategori"));
+        startActivity(i);
+        finish();
     }
 }

@@ -4,11 +4,26 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/mylogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/mylogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.PetCare">
+        <activity
+            android:name=".user.Proses2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".user.ProsesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.AlamatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.EditaccActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.Detail2Activity"
+            android:exported="false" />
         <activity
             android:name=".user.DetailActivity"
             android:exported="false" />

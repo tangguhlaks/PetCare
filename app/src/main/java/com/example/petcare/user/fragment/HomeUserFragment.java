@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.petcare.R;
+import com.example.petcare.user.Detail2Activity;
+import com.example.petcare.user.DetailActivity;
 import com.example.petcare.user.KategoriActivity;
 import com.example.petcare.user.adapter.KategoriAdapter;
 import com.example.petcare.user.adapter.ProdukAdapter;
@@ -61,7 +63,24 @@ public class HomeUserFragment extends Fragment {
         mlistproduk.add(p4);
         produkAdapter = new ProdukAdapter(getContext(),mlistproduk);
         rcreko.setAdapter(produkAdapter);
+        onClickProduk();
         return view;
+    }
+
+    private void onClickProduk() {
+        produkAdapter.setOnCallBack(new ProdukAdapter.OnCallBack() {
+            @Override
+            public void onClickView(ModelProduk modelProduk) {
+                Intent i = new Intent(getContext(), DetailActivity.class);
+                i.putExtra("gambar",modelProduk.getGambar());
+                i.putExtra("nama",modelProduk.getNama());
+                i.putExtra("bintang",modelProduk.getBintang());
+                i.putExtra("deskripsi",modelProduk.getDeskripsi());
+                i.putExtra("harga",modelProduk.getHarga());
+                i.putExtra("kategori","home");
+                startActivity(i);
+            }
+        });
     }
 
     private void onClickKategori() {

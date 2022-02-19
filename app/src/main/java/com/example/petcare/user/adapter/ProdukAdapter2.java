@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +20,11 @@ import java.util.ArrayList;
 public class ProdukAdapter2 extends RecyclerView.Adapter<ProdukAdapter2.MyViewHolder> {
     Context context;
     ArrayList<ModelProduk> mlist;
+    OnCallBack onCallBack;
+
+    public void setOnCallBack(OnCallBack onCallBack) {
+        this.onCallBack = onCallBack;
+    }
 
     public ProdukAdapter2(Context context, ArrayList<ModelProduk> mlist) {
         this.context = context;
@@ -38,6 +44,12 @@ public class ProdukAdapter2 extends RecyclerView.Adapter<ProdukAdapter2.MyViewHo
         holder.harga.setText(mlist.get(position).getHarga());
         holder.nama.setText(mlist.get(position).getNama());
         Picasso.get().load(mlist.get(position).getGambar()).into(holder.image);
+        holder.godetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onCallBack.onClickView(mlist.get(position));
+            }
+        });
     }
 
     @Override
@@ -48,12 +60,17 @@ public class ProdukAdapter2 extends RecyclerView.Adapter<ProdukAdapter2.MyViewHo
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView bintang,harga,nama;
+        Button godetail;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.imageproduk);
             bintang = itemView.findViewById(R.id.bintang);
             nama = itemView.findViewById(R.id.namaproduk);
             harga = itemView.findViewById(R.id.harga);
+            godetail = itemView.findViewById(R.id.godetail);
         }
+    }
+    public interface OnCallBack{
+        void onClickView(ModelProduk modelProduk);
     }
 }

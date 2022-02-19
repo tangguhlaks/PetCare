@@ -67,6 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <Button
+                android:id="@+id/godetail"
                 android:layout_width="75dp"
                 android:textColor="@color/white"
                 android:text="Order"

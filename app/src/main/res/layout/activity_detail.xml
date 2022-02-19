@@ -44,6 +44,7 @@
             <Button
                 android:textColor="@color/white"
                 android:text="Beli"
+                android:id="@+id/beli"
                 android:backgroundTint="@color/mygreen"
                 android:textAllCaps="false"
                 android:layout_width="wrap_content"
