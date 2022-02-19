@@ -66,6 +66,7 @@
                 android:layout_width="75dp"
                 android:textColor="@color/white"
                 android:text="Order"
+                android:id="@+id/godetail"
                 android:backgroundTint="@color/mygreen"
                 android:textAllCaps="false"
                 android:layout_height="wrap_content"

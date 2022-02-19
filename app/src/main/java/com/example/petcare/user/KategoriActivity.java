@@ -22,7 +22,7 @@ public class KategoriActivity extends AppCompatActivity {
     ProdukAdapter produkAdapter;
     ProdukAdapter2 produkAdapter2;
     ArrayList<ModelProduk> mlist=new ArrayList<>();
-
+    String kategori;
     ImageButton goback;
     TextView title;
     @Override
@@ -32,10 +32,10 @@ public class KategoriActivity extends AppCompatActivity {
         title = findViewById(R.id.titlekategori);
         Intent getdata = getIntent();
         title.setText(getdata.getStringExtra("title"));
-        String kategori = getdata.getStringExtra("title").toLowerCase();
+        kategori = getdata.getStringExtra("title");
 
 
-        switch (kategori){
+        switch (kategori.toLowerCase()){
             case "perawatan":
                 rcmakanan = findViewById(R.id.rcviewmakanan);
                 rcmakanan.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
@@ -49,6 +49,7 @@ public class KategoriActivity extends AppCompatActivity {
                 mlist.add(p4);
                 produkAdapter2 = new ProdukAdapter2(getApplicationContext(),mlist);
                 rcmakanan.setAdapter(produkAdapter2);
+                detailclick();
                 break;
             default:
                 rcmakanan = findViewById(R.id.rcviewmakanan);
@@ -63,6 +64,7 @@ public class KategoriActivity extends AppCompatActivity {
                 mlist.add(pp4);
                 produkAdapter = new ProdukAdapter(getApplicationContext(),mlist);
                 rcmakanan.setAdapter(produkAdapter);
+                detailclick();
                 break;
 
         }
@@ -73,6 +75,23 @@ public class KategoriActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),UserActivity.class));
+                finish();
+            }
+        });
+    }
+
+    private void detailclick() {
+        produkAdapter.setOnCallBack(new ProdukAdapter.OnCallBack() {
+            @Override
+            public void onClickView(ModelProduk modelProduk) {
+                Intent i = new Intent(getApplicationContext(),DetailActivity.class);
+                i.putExtra("gambar",modelProduk.getGambar());
+                i.putExtra("nama",modelProduk.getNama());
+                i.putExtra("bintang",modelProduk.getBintang());
+                i.putExtra("deskripsi",modelProduk.getDeskripsi());
+                i.putExtra("harga",modelProduk.getHarga());
+                i.putExtra("kategori",kategori);
+                startActivity(i);
                 finish();
             }
         });

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetCare">
         <activity
+            android:name=".user.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".user.KategoriActivity"
             android:exported="false" />
         <activity
