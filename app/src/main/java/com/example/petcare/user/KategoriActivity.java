@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.petcare.R;
 import com.example.petcare.user.adapter.ProdukAdapter;
@@ -12,14 +16,20 @@ import com.example.petcare.user.model.ModelProduk;
 
 import java.util.ArrayList;
 
-public class MakananActivity extends AppCompatActivity {
+public class KategoriActivity extends AppCompatActivity {
     RecyclerView rcmakanan;
     ProdukAdapter produkAdapter;
     ArrayList<ModelProduk> mlist=new ArrayList<>();
+
+    ImageButton goback;
+    TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_makanan);
+        setContentView(R.layout.activity_kategori);
+        title = findViewById(R.id.titlekategori);
+        Intent getdata = getIntent();
+        title.setText(getdata.getStringExtra("title"));
 
         rcmakanan = findViewById(R.id.rcviewmakanan);
         rcmakanan.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
@@ -33,5 +43,21 @@ public class MakananActivity extends AppCompatActivity {
         mlist.add(p4);
         produkAdapter = new ProdukAdapter(getApplicationContext(),mlist);
         rcmakanan.setAdapter(produkAdapter);
+
+        goback = findViewById(R.id.backhome);
+        goback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),UserActivity.class));
+                finish();
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),UserActivity.class));
+        finish();
     }
 }

@@ -7,6 +7,12 @@ public class KategoriModel {
     String title;
     Class toclass;
 
+    public KategoriModel(int icon, String title, Class toclass) {
+        this.icon = icon;
+        this.title = title;
+        this.toclass = toclass;
+    }
+
     public Class getToclass() {
         return toclass;
     }
@@ -15,11 +21,6 @@ public class KategoriModel {
         this.toclass = toclass;
     }
 
-    public KategoriModel(int icon, String title, Class toclass) {
-        this.icon = icon;
-        this.title = title;
-        this.toclass = toclass;
-    }
 
     public int getIcon() {
         return icon;

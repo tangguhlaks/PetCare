@@ -8,7 +8,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".user.MakananActivity">
+    tools:context=".user.KategoriActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -21,14 +21,16 @@
             android:backgroundTint="@color/white"
             />
         <TextView
+            android:id="@+id/titlekategori"
             android:layout_marginStart="-40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Makanan"
+            android:textSize="20dp"
             android:textAlignment="center"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/blue"
             />
     </LinearLayout>
     <EditText
@@ -43,10 +45,20 @@
         android:background="@drawable/inputan"
         android:hint="Search"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp"
+        android:text="Daftar Produk"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:id="@+id/rcviewmakanan"
         />
 </LinearLayout>

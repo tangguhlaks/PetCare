@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.petcare.R;
-import com.example.petcare.user.MakananActivity;
+import com.example.petcare.user.KategoriActivity;
 import com.example.petcare.user.adapter.KategoriAdapter;
 import com.example.petcare.user.adapter.ProdukAdapter;
 import com.example.petcare.user.model.KategoriModel;
@@ -37,10 +37,10 @@ public class HomeUserFragment extends Fragment {
 
         rckat = view.findViewById(R.id.rcviewkat);
         rckat.setLayoutManager(new GridLayoutManager(getContext(),2));
-        KategoriModel m1 = new KategoriModel(R.drawable.makanan,"Makanan", MakananActivity.class);
-        KategoriModel m2 = new KategoriModel(R.drawable.aksesoris,"Aksesoris",MakananActivity.class);
-        KategoriModel m3 = new KategoriModel(R.drawable.mandi,"Alat Mandi",MakananActivity.class);
-        KategoriModel m4 = new KategoriModel(R.drawable.perawatan,"Perawatan",MakananActivity.class);
+        KategoriModel m1 = new KategoriModel(R.drawable.makanan,"Makanan", KategoriActivity.class);
+        KategoriModel m2 = new KategoriModel(R.drawable.aksesoris,"Aksesoris", KategoriActivity.class);
+        KategoriModel m3 = new KategoriModel(R.drawable.mandi,"Alat Mandi", KategoriActivity.class);
+        KategoriModel m4 = new KategoriModel(R.drawable.perawatan,"Perawatan", KategoriActivity.class);
         mlist.add(m1);
         mlist.add(m2);
         mlist.add(m3);
@@ -68,7 +68,9 @@ public class HomeUserFragment extends Fragment {
         kategoriAdapter.setOnCallBack(new KategoriAdapter.OnCallBack() {
             @Override
             public void onClickView(KategoriModel kategoriModel) {
-                startActivity(new Intent(getContext(),kategoriModel.getToclass()));
+                Intent i = new Intent(getContext(),kategoriModel.getToclass());
+                i.putExtra("title",kategoriModel.getTitle());
+                startActivity(i);
             }
         });
     }
