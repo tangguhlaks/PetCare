@@ -52,7 +52,6 @@
         android:layout_marginTop="15dp"
         android:paddingBottom="10dp"
         android:text="Daftar Produk"
-        android:textColor="@color/black"
         android:textSize="18dp"
         />
     <androidx.recyclerview.widget.RecyclerView
