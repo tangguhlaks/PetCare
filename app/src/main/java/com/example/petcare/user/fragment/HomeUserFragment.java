@@ -1,5 +1,6 @@
 package com.example.petcare.user.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.petcare.R;
+import com.example.petcare.user.MakananActivity;
 import com.example.petcare.user.adapter.KategoriAdapter;
 import com.example.petcare.user.adapter.ProdukAdapter;
 import com.example.petcare.user.model.KategoriModel;
@@ -35,17 +37,17 @@ public class HomeUserFragment extends Fragment {
 
         rckat = view.findViewById(R.id.rcviewkat);
         rckat.setLayoutManager(new GridLayoutManager(getContext(),2));
-        KategoriModel m1 = new KategoriModel(R.drawable.makanan,"Makanan");
-        KategoriModel m2 = new KategoriModel(R.drawable.aksesoris,"Aksesoris");
-        KategoriModel m3 = new KategoriModel(R.drawable.mandi,"Alat Mandi");
-        KategoriModel m4 = new KategoriModel(R.drawable.perawatan,"Perawatan");
+        KategoriModel m1 = new KategoriModel(R.drawable.makanan,"Makanan", MakananActivity.class);
+        KategoriModel m2 = new KategoriModel(R.drawable.aksesoris,"Aksesoris",MakananActivity.class);
+        KategoriModel m3 = new KategoriModel(R.drawable.mandi,"Alat Mandi",MakananActivity.class);
+        KategoriModel m4 = new KategoriModel(R.drawable.perawatan,"Perawatan",MakananActivity.class);
         mlist.add(m1);
         mlist.add(m2);
         mlist.add(m3);
         mlist.add(m4);
         kategoriAdapter = new KategoriAdapter(getContext(),mlist);
         rckat.setAdapter(kategoriAdapter);
-
+        onClickKategori();
 
         rcreko =  view.findViewById(R.id.rcviewrekomendasi);
         rcreko.setLayoutManager(new GridLayoutManager(getContext(),2));
@@ -60,5 +62,14 @@ public class HomeUserFragment extends Fragment {
         produkAdapter = new ProdukAdapter(getContext(),mlistproduk);
         rcreko.setAdapter(produkAdapter);
         return view;
+    }
+
+    private void onClickKategori() {
+        kategoriAdapter.setOnCallBack(new KategoriAdapter.OnCallBack() {
+            @Override
+            public void onClickView(KategoriModel kategoriModel) {
+                startActivity(new Intent(getContext(),kategoriModel.getToclass()));
+            }
+        });
     }
 }

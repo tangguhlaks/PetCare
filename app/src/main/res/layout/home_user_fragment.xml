@@ -48,23 +48,87 @@
         android:backgroundTint="@color/white"
         android:background="@color/white"
         android:layout_height="wrap_content">
-
     <EditText
-        android:focusedByDefault="false"
+        android:clickable="true"
+        android:focusable="false"
         android:drawablePadding="5dp"
         android:paddingStart="5dp"
         android:drawableStart="@drawable/searchi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/search"
+        android:background="@drawable/inputan"
         android:hint="Search"
         />
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/promo"
-        android:layout_marginTop="5dp"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:paddingBottom="10dp"
+            android:text="Promo"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            />
+        <androidx.cardview.widget.CardView
+            android:backgroundTint="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10% Diskon Makanan "
+                        android:textColor="@color/mygreen"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kucing Untuk"
+                        android:textColor="@color/mygreen"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        />
+                    <LinearLayout
+                        android:layout_marginTop="-5dp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hari Ini Saja"
+                        android:textColor="@color/mygreen"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        />
+                        <Button
+                            android:layout_marginStart="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:textColor="@color/white"
+                            android:text="Lihat"
+                            android:textAllCaps="false"
+                            android:backgroundTint="@color/mygreen"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/kucinggg"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

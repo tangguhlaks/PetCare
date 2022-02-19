@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".user.MakananActivity">
@@ -12,12 +14,14 @@
         android:orientation="horizontal"
         android:layout_height="wrap_content">
         <ImageButton
+            android:id="@+id/backhome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back"
             android:backgroundTint="@color/white"
             />
         <TextView
+            android:layout_marginStart="-40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -28,6 +32,7 @@
             />
     </LinearLayout>
     <EditText
+        android:shadowColor="@color/black"
         android:layout_marginTop="10dp"
         android:focusedByDefault="false"
         android:drawablePadding="5dp"
@@ -35,12 +40,13 @@
         android:drawableStart="@drawable/searchi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/search"
+        android:background="@drawable/inputan"
         android:hint="Search"
         />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:id="@+id/rcviewmakanan"
         />
 </LinearLayout>
