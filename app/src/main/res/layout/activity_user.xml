@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:id="@+id/navigasiuser"
+        android:backgroundTint="@color/blue"
+        app:itemBackground="@color/blue"
         app:menu="@menu/menu_user"
         app:itemIconTint="@drawable/colorstate"
         />
