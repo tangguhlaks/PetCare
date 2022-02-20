@@ -24,9 +24,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="17dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:text="Total Harga"
             />
             <TextView
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:id="@+id/dharga"
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
@@ -191,7 +195,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:text="Rating dan Ulasan"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="25dp"
                     />
                 <androidx.cardview.widget.CardView
                     android:layout_marginTop="10dp"
@@ -217,27 +221,18 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 >
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Intan Kirana"
-                                android:layout_marginStart="10dp"
-                                android:textSize="17dp"
-                                android:textColor="@color/black"
-                                android:textStyle="bold"
-                                />
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:text="17/02/2022"
-                                    android:textSize="15dp"
-                                    />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Intan Kirana"
+                                        android:layout_marginStart="10dp"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold"
+                                        />
                                     <LinearLayout
-                                        android:layout_marginTop="-5dp"
                                         android:gravity="end"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content">
@@ -249,11 +244,16 @@
                                     </LinearLayout>
                                 </LinearLayout>
                                 <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="17/02/2022"
+                                    android:textSize="14dp"
+                                    />
+                                <TextView
                                     android:layout_marginTop="5dp"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textColor="@color/black"
-                                    android:textSize="14dp"
                                     android:text="Keren semoga semakin berkembang dan memberi produk yang berkualitas"
                                     />
                             </LinearLayout>
@@ -290,8 +290,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Farrel Melviano"
                                     android:layout_marginStart="10dp"
-                                    android:textSize="17dp"
-                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
                                     android:textStyle="bold"
                                     />
                                 <LinearLayout
@@ -302,7 +301,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="10dp"
                                         android:text="14/02/2022"
-                                        android:textSize="15dp"
+                                        android:textSize="14dp"
                                         />
                                     <LinearLayout
                                         android:layout_marginTop="-5dp"
@@ -320,8 +319,6 @@
                                     android:layout_marginTop="5dp"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textColor="@color/black"
-                                    android:textSize="14dp"
                                     android:text="Aplikasi yang sangat membantu saya
 belanja kebutuhan hewan peliharaan saya"
                                     />

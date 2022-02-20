@@ -51,12 +51,18 @@ public class KategoriActivity extends AppCompatActivity {
                 rcmakanan.setAdapter(produkAdapter2);
                 detailclick2();
                 break;
-            default:
+            case "makanan":
                 rcmakanan = findViewById(R.id.rcviewmakanan);
                 rcmakanan.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
-                ModelProduk pp1 = new ModelProduk(R.drawable.whiskasdry,"4,5","Whiskas Dry Adult 480 gr","Rp 24.000","-");
-                ModelProduk pp2 = new ModelProduk(R.drawable.whiskaspouch,"4,3","Whiskas Pouch 480 gr","Rp 38.000","-");
-                ModelProduk pp3 = new ModelProduk(R.drawable.shampooanjing,"3,5","Shampoo Anjing 250 ml","Rp 54.000","-");
+                ModelProduk pp1 = new ModelProduk(R.drawable.whiskasdry,"4,5","Whiskas Dry Adult 480 gr","Rp 24.000","Makanan kucing WHISKAS® mengandung:\n" +
+                        "1. WHISKAS makanan kucing lengkap dan seimbang, dirancang khusus untuk memenuhi kebutuhan kucing Anda pada tahap kehidupan mereka.\n" +
+                        "2. Milky Pockets - Renyah di bagian luar dengan tekstur creamy lezat di tengah.\n" +
+                        "3.Lengkungan WHISKAS Dry akan membantu merawat kesehatan mulut dan gigi mereka.\n" +
+                        "4. Diperkaya dengan kalsium dan fosfor, termasuk vitamin D untuk pertumbuhan tulang dan tubuh yang sehat.\n" +
+                        "5. Mengandung antioksidan alami berdasarkan vitamin E untuk sistem kekebalan tubuh yang sehat.\n" +
+                        "6. Protein dan lemak berkualitas terpilih untuk menyediakan energi untuk bermain");
+                ModelProduk pp2 = new ModelProduk(R.drawable.pedigree,"4,3","Pedigree Adult 3 kg","Rp 38.000","-");
+                ModelProduk pp3 = new ModelProduk(R.drawable.whiskaspouch,"3,5","Whiskas Pouch Junior Mackerel","Rp 54.000","-");
                 ModelProduk pp4 = new ModelProduk(R.drawable.dogco,"4,9","Dog Choize Adult 20 Kg","Rp 84.000","-");
                 mlist.add(pp1);
                 mlist.add(pp2);
@@ -66,7 +72,38 @@ public class KategoriActivity extends AppCompatActivity {
                 rcmakanan.setAdapter(produkAdapter);
                 detailclick();
                 break;
-
+            case "aksesoris":
+                rcmakanan = findViewById(R.id.rcviewmakanan);
+                rcmakanan.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
+                ModelProduk aa1 = new ModelProduk(R.drawable.kalungkucingbiru,"4,5","Kalung Kucing Warna Biru","Rp 40.000","1.Bisa digunakan untuk Kitten maupun Adult 2.Material: Silicone, Metal 3.Total Length: app.30cm/11.81in 4.Width: app.1cm/0.39i");
+                ModelProduk aa2 = new ModelProduk(R.drawable.kandangkucing,"4,3","Kandang Kucing 60 X 80 cm","Rp 140.000","-");
+                ModelProduk aa3 = new ModelProduk(R.drawable.kalungkucingcoklat,"3,5","Kalung Kucing Warna Coklat","Rp 45.000","-");
+                ModelProduk aa4 = new ModelProduk(R.drawable.talingpengikatanjingnilon,"4,9","Tali Pengikat Anjing Nilon","Rp 50.000","-");
+                mlist.add(aa1);
+                mlist.add(aa2);
+                mlist.add(aa3);
+                mlist.add(aa4);
+                produkAdapter = new ProdukAdapter(getApplicationContext(),mlist);
+                rcmakanan.setAdapter(produkAdapter);
+                detailclick();
+                break;
+            case "alat mandi":
+                rcmakanan = findViewById(R.id.rcviewmakanan);
+                rcmakanan.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
+                ModelProduk ab1 = new ModelProduk(R.drawable.shampooanjing,"4,5","Shampoo Anjing 250 ml","Rp 34.000","1. Diformulasikan untuk mengatasi masalah kulit dan bulu dengan bahan yang efektif\n" +
+                        "2.Mampu mengatasi masalah pada kulit yang disebabkan oleh fungus dan mengandung anti bakteri serta anti sheborrhea, uv screen, dan anti iritasi\n" +
+                        "3.Ideal digunakan untuk anjing\n");
+                ModelProduk ab2 = new ModelProduk(R.drawable.sisiranjing,"4,3","Shampoo Anjing 250 ml","Rp 280.000","-");
+                ModelProduk ab3 = new ModelProduk(R.drawable.handukkucing,"3,5","Handuk Kucing 42cm x 66cm","Rp 110.000","-");
+                ModelProduk ab4 = new ModelProduk(R.drawable.shampookucing,"4,9","Shampoo Kucing 600 ml","Rp 80.000","-");
+                mlist.add(ab1);
+                mlist.add(ab2);
+                mlist.add(ab3);
+                mlist.add(ab4);
+                produkAdapter = new ProdukAdapter(getApplicationContext(),mlist);
+                rcmakanan.setAdapter(produkAdapter);
+                detailclick();
+                break;
         }
 
 
