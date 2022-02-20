@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="No Telepon"
-            android:textSize="17dp"
+            android:textSize="16dp"
             android:textColor="@color/black"
             android:textStyle="bold"
             />
@@ -55,11 +55,11 @@
             android:background="@drawable/inputan"
             />
         <TextView
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Isi alamat dulu yuk"
-            android:textSize="17dp"
+            android:textSize="16dp"
             android:textColor="@color/black"
             android:textStyle="bold"
             />
@@ -74,11 +74,11 @@
             android:background="@drawable/biginput"
             />
         <TextView
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jumlah"
-            android:textSize="17dp"
+            android:textSize="16dp"
             android:textColor="@color/black"
             android:textStyle="bold"
             />
