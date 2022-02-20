@@ -61,7 +61,7 @@ public class KategoriActivity extends AppCompatActivity {
                         "4. Diperkaya dengan kalsium dan fosfor, termasuk vitamin D untuk pertumbuhan tulang dan tubuh yang sehat.\n" +
                         "5. Mengandung antioksidan alami berdasarkan vitamin E untuk sistem kekebalan tubuh yang sehat.\n" +
                         "6. Protein dan lemak berkualitas terpilih untuk menyediakan energi untuk bermain");
-                ModelProduk pp2 = new ModelProduk(R.drawable.pedigree,"4,3","Pedigree Adult 3 kg","Rp 38.000","-");
+                ModelProduk pp2 = new ModelProduk(R.drawable.pedigree,"4,3","Pedigree Adult 3 kg 480 gr","Rp 38.000","-");
                 ModelProduk pp3 = new ModelProduk(R.drawable.whiskaspouch,"3,5","Whiskas Pouch Junior Mackerel","Rp 54.000","-");
                 ModelProduk pp4 = new ModelProduk(R.drawable.dogco,"4,9","Dog Choize Adult 20 Kg","Rp 84.000","-");
                 mlist.add(pp1);
